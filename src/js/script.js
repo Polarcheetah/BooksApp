@@ -36,7 +36,14 @@
       /* generate HTML based on template*/
       console.log('ratingWidth', ratingWidth);
       console.log('ratingBgc', ratingBgc);
-      const generatedHTML = templates.book(book, ratingWidth, ratingBgc);
+      const generatedHTML = templates.book({
+        name: book.name,
+        price: book.price,
+        id: book.id,
+        image: book.image,
+        ratingWidth: ratingWidth,
+        ratingBgc: ratingBgc,
+      });
       /* create element using utils.createElementFromHTML */
       const element = utils.createDOMFromHTML(generatedHTML);
       //console.log(element);
@@ -127,8 +134,7 @@
         ratingBgc = 'linear-gradient(to bottom,  #fefcea 0%, #f1da36 100%)';
         break;
       case rating > 6 && rating <= 8:
-        //ratingBgc = 'linear-gradient(to bottom, #b4df5b 0%,#b4df5b 100%)';
-        ratingBgc = 'yellow';
+        ratingBgc = 'linear-gradient(to bottom, #b4df5b 0%,#b4df5b 100%)';
         break;
       case rating > 8 && rating <= 9:
         ratingBgc = 'linear-gradient(to bottom, #299a0b 0%, #299a0b 100%)';
