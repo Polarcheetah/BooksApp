@@ -155,25 +155,19 @@
     determineRatingBgc(rating) {
       const thisBooksList = this;
       console.log(thisBooksList);
-      let ratingBgc = '';
+
       switch (true) {
         case rating <= 6:
-          ratingBgc = 'linear-gradient(to bottom,  #fefcea 0%, #f1da36 100%)';
-          break;
+          return 'linear-gradient(to bottom,  #fefcea 0%, #f1da36 100%)';
         case rating > 6 && rating <= 8:
-          ratingBgc = 'linear-gradient(to bottom, #b4df5b 0%,#b4df5b 100%)';
-          break;
+          return 'linear-gradient(to bottom, #b4df5b 0%,#b4df5b 100%)';
         case rating > 8 && rating <= 9:
-          ratingBgc = 'linear-gradient(to bottom, #299a0b 0%, #299a0b 100%)';
-          break;
+          return 'linear-gradient(to bottom, #299a0b 0%, #299a0b 100%)';
         case rating > 9:
-          ratingBgc = 'linear-gradient(to bottom, #ff0084 0%,#ff0084 100%)';
-          break;
+          return 'linear-gradient(to bottom, #ff0084 0%,#ff0084 100%)';
         default:
-          ratingBgc = 'linear-gradient(to bottom,  #f8f9f9 0%, #626567 100%)';
-          break;
+          return 'linear-gradient(to bottom,  #f8f9f9 0%, #626567 100%)';
       }
-      return ratingBgc;
     }
   }
 
