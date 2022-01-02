@@ -64,6 +64,7 @@
           price: book.price,
           id: book.id,
           image: book.image,
+          rating: book.rating,
           ratingWidth: ratingWidth,
           ratingBgc: ratingBgc,
         });
@@ -86,12 +87,12 @@
       //console.log(booksList.innerHTML);
 
       thisBooksList.booksList.addEventListener('dblclick', function (event) {
+        event.preventDefault();
         if (
           event.target.offsetParent.classList.contains(
             classNames.bookList.bookImage
           )
         ) {
-          event.preventDefault();
           console.log('element clicked!');
           event.target.offsetParent.classList.add(
             classNames.bookList.favoriteBook
